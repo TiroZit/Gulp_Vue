@@ -6,6 +6,7 @@ export const gitignore = () => {
 		fs.appendFile('./.gitignore', 'phpmailer/\r\n', cb);
 		fs.appendFile('./.gitignore', 'package-lock.json\r\n', cb);
 		fs.appendFile('./.gitignore', 'node_modules/\r\n', cb);
+		fs.appendFile('./.gitignore', 'dist/\r\n', cb);
 		fs.appendFile('./.gitignore', '.gitignore\r\n', cb);
 		fs.appendFile('./.gitignore', '.idea\r\n', cb);
 		fs.appendFile('./.gitignore', '.vscode\r\n', cb);

@@ -7,7 +7,7 @@ import { VueLoaderPlugin } from 'vue-loader';
 import * as path from 'path';
 
 const srcFolder = "src";
-const builFolder = "docs";
+const builFolder = "dist";
 const rootFolder = path.basename(path.resolve());
 
 let pugPages = fs.readdirSync(srcFolder).filter(fileName => fileName.endsWith('.pug'))

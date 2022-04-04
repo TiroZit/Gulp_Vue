@@ -9,6 +9,7 @@
 	"scripts": {
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
 		"build": "gulp build --build",
+		"deployGH": "gulp deployGH --build",
 		"npm": "npm install",
 		"fonts": "gulp fonts --rewrite",
 		"deploy": "gulp deployFTP --build",
@@ -22,6 +23,7 @@
 		"copy-webpack-plugin": "latest",
 		"css-loader": "latest",
 		"del": "latest",
+		"gh-pages": "latest",
 		"file-include-webpack-plugin-replace": "latest",
 		"fls-bemtree-from-html": "^1.0.0",
 		"gulp": "latest",
