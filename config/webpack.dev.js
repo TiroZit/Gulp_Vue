@@ -1,4 +1,5 @@
 import fs from 'fs';
+import webpack from 'webpack';
 import FileIncludeWebpackPlugin from 'file-include-webpack-plugin-replace';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from "copy-webpack-plugin";
@@ -71,6 +72,12 @@ const config = {
 	},
 	module: {
 		rules: [
+			{
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
       { 
 				test: /\.vue$/,
 				use: [
@@ -186,6 +193,10 @@ const config = {
 					noErrorOnMissing: true
 				}
 			],
+		}),
+		new webpack.DefinePlugin({
+			__VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__: false,
 		}),
 	],
 	resolve: {

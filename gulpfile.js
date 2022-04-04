@@ -28,7 +28,7 @@ import { zip } from "./config/gulp-tasks/zip.js";
 import { sprite } from "./config/gulp-tasks/sprite.js";
 import { gitignore } from "./config/gulp-tasks/gitignore.js";
 import { otfToTtf, ttfToWoff, fonstStyle } from "./config/gulp-tasks/fonts.js";
-import { gitPages } from "./gulp/tasks/git-pages.js";
+import { gitPages } from "./config/gulp-tasks/git-pages.js";
 
 // Последовательная обработака шрифтов
 const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);

@@ -1,7 +1,18 @@
 // JS
-import './js/index.js'
+import './js/index.js';
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+// Импорт UI компонентов
+import components from './components/UI';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+// Глобальная регистрация UI компонентов
+if(!components === null){
+  components.forEach(component => {
+    app.component(component.name, component);
+  });
+};
+
+app.mount('#app');
