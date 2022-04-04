@@ -50,7 +50,7 @@ const config = {
 	devServer: {
 		historyApiFallback: true,
 		static: paths.build,
-		open: true,
+		open: false,
 		compress: true,
 		port: 'auto',
 		hot: true,
@@ -58,9 +58,9 @@ const config = {
 
 		// Расскоментировать на слабом ПК
 		// (в режиме разработчика, папка с результаттом будет создаваться на диске)
-		devMiddleware: {
-			writeToDisk: true,
-		},
+		// devMiddleware: {
+		// 	writeToDisk: true,
+		// },
 
 		watchFiles: [
 			`${paths.src}/**/*.html`,
