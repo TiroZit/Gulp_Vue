@@ -40,18 +40,39 @@ const config = {
 	cache: {
 		type: 'filesystem'
 	},
+	output: {
+		path: `${paths.build}`,
+		filename: '[name].min.js',
+		publicPath: '',
+	},
 	optimization: {
 		minimizer: [new TerserPlugin({
 			extractComments: false,
 		})],
-	},
-	output: {
-		path: `${paths.build}`,
-		filename: 'app.min.js',
-		publicPath: '',
+		splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
 	},
 	module: {
 		rules: [
+			{
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
+			{
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: '/node_modules/'
+      },
       {
 				test: /\.pug$/,
         oneOf: [

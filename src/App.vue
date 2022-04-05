@@ -4,10 +4,16 @@
 
 <script>
 export default {
-  name: 'App'
+  data(){
+    return{
+    }
+  },
+  methods:{
+  }
 }
 </script>
 
 <style lang='scss'>
+@import 'scss/style';
 
 </style>
