@@ -134,6 +134,9 @@ const config = {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
+							additionalData: `
+								@import '${srcFolder}/scss/base/variables.scss';
+							`
 						}
 					}
 				],

@@ -100,12 +100,13 @@ const config = {
 							replace: 'img',
 							flags: 'g'
 						}
-					}
+					},
 				]
 			},
       {
 				test: /\.(scss|css)$/,
 				use: [
+					'vue-style-loader',
 					MiniCssExtractPlugin.loader,
 					{
 						loader: 'string-replace-loader',
@@ -133,6 +134,9 @@ const config = {
 					{
 						loader: 'sass-loader',
 						options: {
+							additionalData: `
+								@import '${srcFolder}/scss/base/variables.scss';
+							`,
 							sassOptions: {
 								outputStyle: "expanded",
 							},
